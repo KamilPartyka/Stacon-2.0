@@ -26,6 +26,27 @@ sectionOneOptions);
 
 sectionOneObserver.observe(sectionOne);
 
+// Gallery
+
+const mainImg = document.querySelector('#mainIMG');
+const imgs = document.querySelectorAll('.gallery__imgs img');
+
+imgs[0].style.opacity = 0.4;
+
+imgs.forEach((img) =>
+	img.addEventListener('click', (e) => {
+		imgs.forEach((img) => {
+			img.style.opacity = 1;
+		});
+		mainImg.src = e.target.src;
+
+		mainImg.classList.add('fade-in');
+		setTimeout(() => mainImg.classList.remove('fade-in'), 500);
+
+		e.target.style.opacity = 0.4;
+	})
+);
+
 // Form
 
 const form = document.querySelector('.contact__form__form');
@@ -38,10 +59,10 @@ const successMsg = document.querySelector('.successMsg');
 
 form.addEventListener('submit', (e) => {
 	let messages = [];
-	if (name.value.length <= 3) {
+	if (name.value.length <= 5) {
 		messages.push('Nazwa firmy za krótka');
 	}
-	if (email.value.length <= 5) {
+	if (email.value.length <= 7) {
 		messages.push('Adres email za krótki');
 	}
 	if (message.value.length < 10) {
