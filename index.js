@@ -15,10 +15,12 @@ const sectionOneObserver = new IntersectionObserver(function (
 	sectionOneObserver
 ) {
 	entries.forEach((entry) => {
-		if (!entry.isIntersecting) {
-			navBar.style.height = heightAfterScroll;
-		} else {
-			navBar.style.height = heightBeforeScroll;
+		if (window.innerWidth > 575) {
+			if (!entry.isIntersecting) {
+				navBar.style.height = heightAfterScroll;
+			} else {
+				navBar.style.height = heightBeforeScroll;
+			}
 		}
 	});
 },
@@ -26,6 +28,23 @@ sectionOneOptions);
 
 sectionOneObserver.observe(sectionOne);
 
+// Nav hamburger
+
+const hamburger = document.querySelector('.navbar__hamburger');
+const sideNav = document.querySelector('.sideNav');
+const sideNavLinks = document.querySelectorAll('.sideNav__list-items');
+
+hamburger.addEventListener('click', () => {
+	hamburger.classList.toggle('navbar__hamburger--active');
+	sideNav.classList.toggle('sideNav--hide');
+});
+
+sideNavLinks.forEach((i) => {
+	i.addEventListener('click', () => {
+		sideNav.classList.add('sideNav--hide');
+		hamburger.classList.toggle('navbar__hamburger--active');
+	});
+});
 // Gallery
 
 const mainImg = document.querySelector('#mainIMG');
@@ -49,7 +68,7 @@ imgs.forEach((img) =>
 
 // Form
 
-const form = document.querySelector('.contact__form__form');
+const form = document.querySelector('.contact__form-form');
 const name = document.querySelector('#name');
 const email = document.querySelector('#email');
 const message = document.querySelector('#message');

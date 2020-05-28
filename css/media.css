@@ -2,26 +2,40 @@
 		Media 
 --------------------------*/
 
-@media (max-width: 1200px) {
+@media (max-width: 1199.98px) {
+	.info__text {
+		text-align: center;
+		font-size: 1.3rem;
+		width: 80%;
+	}
 	.gallery__imgs {
 		grid-template-columns: repeat(2, 1fr);
+		height: 550px;
 	}
 }
-@media (max-width: 869px) {
+@media (max-width: 991.98px) {
 	.navbar {
 		padding: 0;
 	}
 	.offer__text {
 		flex-direction: column;
 	}
-}
-@media (max-width: 768px) {
-	.navbar {
-		padding: 0;
-	}
 	.gallery__imgs img {
 		height: 100px;
 	}
+	.contact__form-item input {
+		width: 350px;
+	}
+	.contact__form-item textarea {
+		height: 100px;
+		width: 350px;
+	}
+}
+@media (max-width: 767.98px) {
+	.navbar {
+		padding: 0;
+	}
+
 	.contact__form-item input {
 		width: 250px;
 	}
@@ -30,7 +44,7 @@
 		width: 250px;
 	}
 }
-@media (max-width: 500px) {
+@media (max-width: 575.98px) {
 	h2 {
 		font-size: 1.5rem;
 	}
@@ -39,6 +53,9 @@
 		NavBar 
 --------------------------*/
 
+	.navbar {
+		height: 60px;
+	}
 	.navbar__links {
 		display: none;
 	}
@@ -49,6 +66,9 @@
 	.navbar__logo img {
 		padding: 0;
 		margin: auto;
+	}
+	.navbar__hamburger-wraper {
+		display: flex;
 	}
 
 	/* -----------------------
@@ -66,9 +86,8 @@
 		cursor: pointer;
 	}
 	.hero__arrows a {
-		font-size: 0.8rem;
+		font-size: 1rem;
 		text-decoration: none;
-		color: #2d2d2d;
 	}
 
 	/* -----------------------
