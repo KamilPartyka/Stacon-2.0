@@ -69,7 +69,7 @@
 		font-size: 1.5rem;
 	}
 	.navbar {
-		height: 60px;
+		height: 60px !important;
 	}
 	.navbar__links {
 		display: none;
@@ -159,11 +159,8 @@
 	.footer {
 		height: auto;
 	}
-	.footer p:first-child {
+	.footer p {
 		padding: 10px;
-	}
-	.footer span {
-		font-size: 10px;
 	}
 	.hero__text {
 		width: 100%;
