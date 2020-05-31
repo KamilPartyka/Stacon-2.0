@@ -515,11 +515,11 @@ h3 {
 	background-color: #2867a2;
 	color: white;
 }
-.footer p:first-child {
+.footer p {
 	padding: 20px;
 	margin: 0;
 }
 
-.footer span {
+.footer span:last-of-type {
 	font-size: 13px;
 }

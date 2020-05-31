@@ -123,3 +123,7 @@ form.addEventListener('submit', (e) => {
 		);
 	}
 });
+
+// Footer
+
+document.getElementById('year').innerHTML = new Date().getFullYear();
