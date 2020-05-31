@@ -60,7 +60,12 @@
 		<section class="section hero">
 			<div class="hero__wrapper">
 				<div class="hero__text">
-					<h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h2>
+					<h2>RUSZTOWANIA</h2>
+					<h2>ELEWACYJNE i WARSZAWSKIE</h2>
+					<p>
+						Zapraszamy do kontaktu aby poznać aktualną ofertę oraz skorzystać z
+						dostępnych promocji.
+					</p>
 				</div>
 				<div class="hero__img">
 					<img src="img/Rusztowanie 03.jpg" />
@@ -251,5 +256,25 @@
 			</p>
 		</footer>
 		<script src="index.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function () {
+				$('a').on('click', function (event) {
+					if (this.hash !== '') {
+						event.preventDefault();
+						let hash = this.hash;
+						$('html, body').animate(
+							{
+								scrollTop: $(hash).offset().top,
+							},
+							500,
+							function () {
+								window.location.hash = hash;
+							}
+						);
+					}
+				});
+			});
+		</script>
 	</body>
 </html>
