@@ -19,6 +19,9 @@
 	.hero__wrapper {
 		flex-direction: column;
 	}
+	.hero__text h2:first-of-type {
+		text-shadow: 1px 1px 1px #787878;
+	}
 	.hero__text,
 	.hero__text p {
 		width: 80%;
