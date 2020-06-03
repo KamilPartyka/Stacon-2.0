@@ -165,7 +165,7 @@ h3 {
 }
 .sideNav__list-items {
 	text-align: center;
-	padding-top: 40px;
+	padding-top: 20px;
 }
 .sideNav__list-items:first-child {
 	padding-top: 20px;
@@ -510,20 +510,29 @@ h3 {
 --------------------------*/
 
 .footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
 	text-align: center;
+	padding: 15px;
 	height: 80px;
 	background-color: #2867a2;
 	color: white;
+	font-size: 15px;
 }
-.footer p {
-	padding: 20px;
-	margin: 0;
-}
-
 .footer a {
 	text-decoration: none;
-	font-size: 15px;
+	font-size: 1em;
 	color: white;
+}
+.footer p {
+	margin: 0;
+	padding: 0;
+	font-size: 1em;
+}
+.footer span {
+	font-size: 1em;
 }
 
 /* -----------------------
@@ -532,7 +541,7 @@ h3 {
 
 .privacyPolitycy__wrapper {
 	width: 80%;
-	margin: 100px auto;
+	margin: 150px auto;
 }
 .privacyPolitycy__paragraph {
 	line-height: 1.7;
