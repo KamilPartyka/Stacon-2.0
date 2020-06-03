@@ -1,5 +1,4 @@
-// Nav
-
+// IntersectionObserver for NavBar
 const navBar = document.querySelector('.navbar');
 const sectionOne = document.querySelector('#start');
 
@@ -15,18 +14,88 @@ const sectionOneObserver = new IntersectionObserver(function (
 	sectionOneObserver
 ) {
 	entries.forEach((entry) => {
-		if (window.innerWidth > 575) {
-			if (!entry.isIntersecting) {
-				navBar.style.height = heightAfterScroll;
-			} else {
-				navBar.style.height = heightBeforeScroll;
-			}
+		if (!entry.isIntersecting) {
+			navBar.style.height = heightAfterScroll;
+		} else {
+			navBar.style.height = heightBeforeScroll;
 		}
 	});
 },
 sectionOneOptions);
-
 sectionOneObserver.observe(sectionOne);
+
+// IntersectionObserver for Info Banner
+const infoBannerItems = document.querySelectorAll('.info__banner-item');
+const animationInfoBanner = 'info__banner-item--animation';
+
+const infoBannerItemsObserver = new IntersectionObserver((entries) => {
+	entries.forEach((entry) => {
+		if (entry.isIntersecting) {
+			entry.target.classList.add(animationInfoBanner);
+		} else {
+			entry.target.classList.remove(animationInfoBanner);
+		}
+	});
+});
+infoBannerItems.forEach((item) => {
+	infoBannerItemsObserver.observe(item);
+});
+
+// IntersectionObserver for Gallery
+const galleryMain = document.querySelector('.gallery__main');
+const galleryImgs = document.querySelector('.gallery__imgs');
+
+const animationGalleryMain = 'gallery__main--animation';
+const animationGalleryImgs = 'gallery__imgs--animation';
+
+const galleryMainObserver = new IntersectionObserver((entries) => {
+	entries.forEach((entry) => {
+		if (entry.isIntersecting) {
+			entry.target.classList.add(animationGalleryMain);
+		} else {
+			entry.target.classList.remove(animationGalleryMain);
+		}
+	});
+});
+const galleryImgsObserver = new IntersectionObserver((entries) => {
+	entries.forEach((entry) => {
+		if (entry.isIntersecting) {
+			entry.target.classList.add(animationGalleryImgs);
+		} else {
+			entry.target.classList.remove(animationGalleryImgs);
+		}
+	});
+});
+galleryMainObserver.observe(galleryMain);
+galleryImgsObserver.observe(galleryImgs);
+
+// IntersectionObserver for Contact
+const contactAddres = document.querySelector('.contact__addres');
+const contactForm = document.querySelector('.contact__form');
+
+const animationContactAddres = 'contact__addres--animation';
+const animationContactForm = 'contact__form--animation';
+
+const contactAddresObserver = new IntersectionObserver((entries) => {
+	entries.forEach((entry) => {
+		if (entry.isIntersecting) {
+			entry.target.classList.add(animationContactAddres);
+		} else {
+			entry.target.classList.remove(animationContactAddres);
+		}
+	});
+});
+const contactFormObserver = new IntersectionObserver((entries) => {
+	entries.forEach((entry) => {
+		if (entry.isIntersecting) {
+			entry.target.classList.add(animationContactForm);
+		} else {
+			entry.target.classList.remove(animationContactForm);
+		}
+	});
+});
+contactAddresObserver.observe(contactAddres);
+contactFormObserver.observe(contactForm);
 
 // Nav hamburger
 
@@ -39,8 +108,8 @@ hamburger.addEventListener('click', () => {
 	sideNav.classList.toggle('sideNav--hide');
 });
 
-sideNavLinks.forEach((i) => {
-	i.addEventListener('click', () => {
+sideNavLinks.forEach((item) => {
+	item.addEventListener('click', () => {
 		sideNav.classList.add('sideNav--hide');
 		hamburger.classList.toggle('navbar__hamburger--active');
 	});
