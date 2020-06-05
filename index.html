@@ -31,7 +31,7 @@
 	<body>
 		<nav class="navbar">
 			<a href="#" class="navbar__logo">
-				<img src="img/LOGO.jpg" alt="Stacon" />
+				<img src="img/Logo.png" alt="Stacon" />
 			</a>
 			<ul class="navbar__links">
 				<li class="navbar__links-item">
@@ -173,8 +173,16 @@
 					/>
 				</div>
 				<div class="gallery__imgs">
-					<img src="img/gallery/Rusztowanie 02_1.jpg" alt="product photo" />
-					<img src="img/gallery/Rusztowanie 01.jpg" alt="product photo" />
+					<img
+						src="img/gallery/Rusztowanie 02_1.jpg"
+						data-large-img="img/gallery/Rusztowanie 04.jpg"
+						alt="product photo"
+					/>
+					<img
+						src="img/gallery/Rusztowanie 01.jpg"
+						data-large-img="img/gallery/Rusztowanie 04.jpg"
+						alt="product photo"
+					/>
 					<img src="img/gallery/Rusztowanie 04.jpg" alt="product photo" />
 					<img src="img/gallery/Rusztowanie 08.jpg" alt="product photo" />
 					<img src="img/gallery/Rusztowanie 09.jpg" alt="product photo" />
@@ -245,7 +253,7 @@
 							type="email"
 							id="email"
 							name="email"
-							placeholder="Wpisz email do odpowiedzi"
+							placeholder="Wpisz swój email do odpowiedzi"
 							required
 						/>
 					</div>
@@ -292,6 +300,21 @@
 					}
 				});
 			});
+		</script>
+		<script>
+			function msieversion() {
+				var ua = window.navigator.userAgent;
+				var msie = ua.indexOf('MSIE ');
+
+				if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+					// If Internet Explorer
+
+					alert(
+						'Ta strona nie wspiera przeglądarki Internet Explorer, aby poprawnie wyświetlać treści prosimy użyć przeglądarki Google Chrome lub Firefox'
+					);
+				}
+			}
+			msieversion();
 		</script>
 	</body>
 </html>

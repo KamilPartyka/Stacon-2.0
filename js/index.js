@@ -126,7 +126,9 @@ imgs.forEach((img) =>
 		imgs.forEach((img) => {
 			img.style.opacity = 1;
 		});
+
 		mainImg.src = e.target.src;
+		// mainImg.src = img.dataset.largeImg;
 
 		mainImg.classList.add('fade-in');
 		setTimeout(() => mainImg.classList.remove('fade-in'), 500);

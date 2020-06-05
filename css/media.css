@@ -16,11 +16,17 @@
 	.navbar {
 		padding: 0;
 	}
+	.hero {
+		height: auto;
+	}
 	.hero__wrapper {
 		flex-direction: column;
 	}
 	.hero__text h2:first-of-type {
 		text-shadow: 1px 1px 1px #787878;
+	}
+	.hero__text {
+		padding: 10px;
 	}
 	.hero__text,
 	.hero__text p {
@@ -28,6 +34,7 @@
 	}
 	.hero__img {
 		width: 70%;
+		padding: 20px;
 	}
 	.hero__arrows a {
 		font-size: 1rem;
@@ -47,10 +54,6 @@
 	}
 }
 @media (max-width: 767.98px) {
-	.navbar {
-		padding: 0;
-	}
-
 	.contact__form-item input {
 		width: 250px;
 	}
@@ -73,7 +76,6 @@
 		display: block;
 	}
 	.navbar__logo img {
-		padding: 0;
 		margin: auto;
 	}
 	.navbar__hamburger-wraper {
