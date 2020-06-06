@@ -11,18 +11,15 @@
 			name="keywords"
 			content="rusztowanie, rusztowania, rux, plettac, złącze, kotwa, śruba, stopa, rama, ramka warszawska, rusztowanie warszawskie, stacon rusztowania, rusztowania rzeszów, rusztowania kolbuszowa, rusztowania polska, rux polska, ceny rusztowań, Kupno, Kupno rusztowania, sprzedaż rusztowań"
 		/>
-		<title>Stacon | Rusztowania elewacyjne</title>
+		<title>Stacon | Rusztowania elewacyjne i warszawskie</title>
 		<link
 			href="https://fonts.googleapis.com/css?family=Raleway:300,400,700&display=swap"
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="css/index.css" />
 		<link rel="stylesheet" href="css/media.css" />
-		<script
-			type="text/javascript"
-			src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"
-		></script>
-		<script type="text/javascript">
+		<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+		<script>
 			(function () {
 				emailjs.init('user_oFHPtlDMHXhAVOPgE6RbV');
 			})();
@@ -75,7 +72,7 @@
 					</p>
 				</div>
 				<div class="hero__img">
-					<img src="img/Rusztowanie 03.jpg" alt="product photo" />
+					<img src="img/Rusztowanie_03.jpg" alt="product photo" />
 				</div>
 			</div>
 			<div class="hero__arrows" id="start">
@@ -106,7 +103,7 @@
 			</div>
 			<div class="info__banner">
 				<div class="info__banner-item">
-					<img src="img/Rusztowanie 11.jpg" alt="product photo" />
+					<img src="img/Rusztowanie_11.jpg" alt="product photo" />
 					<h3>Doświadczenie</h3>
 					<p>
 						Od ponad 20 lat zajmujemy się produkcją rusztowań wraz z całym
@@ -116,7 +113,7 @@
 					</p>
 				</div>
 				<div class="info__banner-item">
-					<img src="img/Rusztowanie 15.jpg" alt="product photo" />
+					<img src="img/Rusztowanie_15.jpg" alt="product photo" />
 					<h3>Dystrybucja</h3>
 					<p>
 						Realizujemy dystrybucję na rynek krajowy (najczęściej nasze
@@ -315,7 +312,6 @@
 				<iframe
 					title="iframe from google maps"
 					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2553.4562773885127!2d21.823803815790765!3d50.208693479442694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473d1e98bd4045b7%3A0xc9e4b4e9e25abd67!2sSTACON%20Rusztowania!5e0!3m2!1spl!2spl!4v1578414522476!5m2!1spl!2spl"
-					SameSite="None"
 				></iframe>
 			</div>
 			<div class="contact__header">
@@ -324,7 +320,7 @@
 			<div class="contact__addres">
 				<p>
 					Telefon kontaktowy: <br />
-					<a href="tel:509 532 729"><b>509 532 729</b></a>
+					<a href="tel:509532729"><b>509 532 729</b></a>
 				</p>
 				<p>
 					Adres e-mail: <br />
@@ -345,7 +341,7 @@
 			</div>
 
 			<div class="contact__form">
-				<form autocomplete="off" class="contact__form-form" method="" action="">
+				<form autocomplete="off" class="contact__form-form">
 					<div class="errorMsg"></div>
 					<div class="successMsg">Wysłano wiadomość!</div>
 					<div class="contact__form-item">
@@ -414,12 +410,10 @@
 		</script>
 		<script>
 			function msieversion() {
-				var ua = window.navigator.userAgent;
-				var msie = ua.indexOf('MSIE ');
-
+				const ua = window.navigator.userAgent;
+				const msie = ua.indexOf('MSIE ');
 				if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
 					// If Internet Explorer
-
 					alert(
 						'Ta strona nie wspiera przeglądarki Internet Explorer, aby poprawnie wyświetlać treści prosimy użyć przeglądarki Google Chrome lub Firefox'
 					);
