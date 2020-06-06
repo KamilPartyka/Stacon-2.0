@@ -126,16 +126,19 @@ imgs.forEach((img) =>
 		imgs.forEach((img) => {
 			img.style.opacity = 1;
 		});
+		mainImg.style.opacity = 0;
+		setTimeout(() => (mainImg.src = img.dataset.largeImg), 500);
+		setTimeout(() => (mainImg.style.opacity = 1), 1000);
 
-		mainImg.src = e.target.src;
-		// mainImg.src = img.dataset.largeImg;
-
-		mainImg.classList.add('fade-in');
-		setTimeout(() => mainImg.classList.remove('fade-in'), 500);
+		// mainImg.src = e.target.src;
+		// mainImg.classList.add('fade-in');
+		// setTimeout(() => mainImg.classList.remove('fade-in'), 500);
 
 		e.target.style.opacity = 0.4;
 	})
 );
+
+galleryMain.addEventListener('contextmenu', (event) => event.preventDefault());
 
 // Form
 

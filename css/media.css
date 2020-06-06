@@ -7,9 +7,12 @@
 	.info__text {
 		width: 80%;
 	}
+	.gallery__main img {
+		max-height: 550px;
+	}
 	.gallery__imgs {
 		grid-template-columns: repeat(2, 1fr);
-		height: 550px;
+		max-height: 550px;
 	}
 }
 @media (max-width: 991.98px) {
