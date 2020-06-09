@@ -289,7 +289,7 @@ h3 {
 .info__text {
 	text-align: center;
 	font-size: 1.3rem;
-	width: 70%;
+	width: 80%;
 	margin: 0 auto;
 }
 .info__banner {
@@ -344,10 +344,10 @@ h3 {
 	padding: 20px;
 }
 .offer__text-partOne {
-	font-size: 1.5rem;
+	font-size: 2rem;
 }
 .offer__text-partTwo {
-	font-size: 1.1rem;
+	font-size: 1.5rem;
 }
 .offer::before {
 	display: block;
