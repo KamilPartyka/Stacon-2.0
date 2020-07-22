@@ -8,11 +8,9 @@ const heightAfterScroll = '60px';
 const sectionOneOptions = {
 	rootMargin: '-150px 0px 0px 0px',
 };
+const threshold = { threshold: 0.4 };
 
-const sectionOneObserver = new IntersectionObserver(function (
-	entries,
-	sectionOneObserver
-) {
+const sectionOneObserver = new IntersectionObserver((entries) => {
 	entries.forEach((entry) => {
 		if (!entry.isIntersecting) {
 			navBar.style.height = heightAfterScroll;
@@ -20,23 +18,24 @@ const sectionOneObserver = new IntersectionObserver(function (
 			navBar.style.height = heightBeforeScroll;
 		}
 	});
-},
-sectionOneOptions);
+}, sectionOneOptions);
 sectionOneObserver.observe(sectionOne);
 
 // IntersectionObserver for Info Banner
 const infoBannerItems = document.querySelectorAll('.info__banner-item');
 const animationInfoBanner = 'info__banner-item--animation';
 
-const infoBannerItemsObserver = new IntersectionObserver((entries) => {
-	entries.forEach((entry) => {
-		if (entry.isIntersecting) {
-			entry.target.classList.add(animationInfoBanner);
-		} else {
-			entry.target.classList.remove(animationInfoBanner);
-		}
-	});
-});
+const infoBannerItemsObserver = new IntersectionObserver(
+	(entries, infoBannerItemsObserver) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add(animationInfoBanner);
+				infoBannerItemsObserver.unobserve(entry.target);
+			}
+		});
+	},
+	threshold
+);
 infoBannerItems.forEach((item) => {
 	infoBannerItemsObserver.observe(item);
 });
@@ -48,25 +47,30 @@ const galleryImgs = document.querySelector('.gallery__imgs');
 const animationGalleryMain = 'gallery__main--animation';
 const animationGalleryImgs = 'gallery__imgs--animation';
 
-const galleryMainObserver = new IntersectionObserver((entries) => {
-	entries.forEach((entry) => {
-		if (entry.isIntersecting) {
-			entry.target.classList.add(animationGalleryMain);
-		} else {
-			entry.target.classList.remove(animationGalleryMain);
-		}
-	});
-});
-const galleryImgsObserver = new IntersectionObserver((entries) => {
-	entries.forEach((entry) => {
-		if (entry.isIntersecting) {
-			entry.target.classList.add(animationGalleryImgs);
-		} else {
-			entry.target.classList.remove(animationGalleryImgs);
-		}
-	});
-});
+const galleryMainObserver = new IntersectionObserver(
+	(entries, galleryMainObserver) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add(animationGalleryMain);
+				galleryMainObserver.unobserve(entry.target);
+			}
+		});
+	},
+	threshold
+);
 galleryMainObserver.observe(galleryMain);
+
+const galleryImgsObserver = new IntersectionObserver(
+	(entries, galleryImgsObserver) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add(animationGalleryImgs);
+				galleryImgsObserver.unobserve(entry.target);
+			}
+		});
+	},
+	threshold
+);
 galleryImgsObserver.observe(galleryImgs);
 
 // IntersectionObserver for Contact
@@ -76,24 +80,28 @@ const contactForm = document.querySelector('.contact__form');
 const animationContactAddres = 'contact__addres--animation';
 const animationContactForm = 'contact__form--animation';
 
-const contactAddresObserver = new IntersectionObserver((entries) => {
-	entries.forEach((entry) => {
-		if (entry.isIntersecting) {
-			entry.target.classList.add(animationContactAddres);
-		} else {
-			entry.target.classList.remove(animationContactAddres);
-		}
-	});
-});
-const contactFormObserver = new IntersectionObserver((entries) => {
-	entries.forEach((entry) => {
-		if (entry.isIntersecting) {
-			entry.target.classList.add(animationContactForm);
-		} else {
-			entry.target.classList.remove(animationContactForm);
-		}
-	});
-});
+const contactAddresObserver = new IntersectionObserver(
+	(entries, contactAddresObserver) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add(animationContactAddres);
+				contactAddresObserver.unobserve(entry.target);
+			}
+		});
+	},
+	threshold
+);
+const contactFormObserver = new IntersectionObserver(
+	(entries, contactFormObserver) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add(animationContactForm);
+				contactFormObserver.unobserve(entry.target);
+			}
+		});
+	},
+	threshold
+);
 contactAddresObserver.observe(contactAddres);
 contactFormObserver.observe(contactForm);
 
@@ -126,13 +134,12 @@ imgs.forEach((img) =>
 		imgs.forEach((img) => {
 			img.style.opacity = 1;
 		});
+
 		mainImg.style.opacity = 0;
 		setTimeout(() => (mainImg.src = img.dataset.largeImg), 500);
-		setTimeout(() => (mainImg.style.opacity = 1), 1300);
-
-		// mainImg.src = e.target.src;
-		// mainImg.classList.add('fade-in');
-		// setTimeout(() => mainImg.classList.remove('fade-in'), 500);
+		mainImg.addEventListener('load', () => {
+			mainImg.style.opacity = 1;
+		});
 
 		e.target.style.opacity = 0.4;
 	})
